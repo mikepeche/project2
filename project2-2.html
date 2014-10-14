@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Game of Zones</title>
+	<style>
+    	body {background-color:#1C1C1C}
+    	.title {color:red; font-family: Cambria;font-size:18pt;}
+    	textarea {text-align:center}
+  	</style>
+</head>
+<body>
+    <p class="title">Game of Zones</p>
+	<textarea rows="10" cols="25" id="ta" readonly>Pick a destination wisely. There is a consequence upon your selection.</textarea>
+
+	<!-- All buttons, id's, values, and onclicks. -->
+	<br>
+	
+	<input type ="button" id="btnNorth" value="North" onclick="btnNorth_Click();"/>
+
+	<br>          
+
+    <input type ="button" id ="btnWest" value ="West" onclick ="btnWest_Click();"/>
+    <input type ="button" id ="btnEast" value ="East" onclick ="btnEast_Click();"/>
+
+	<br>
+
+    <input type ="button" id="btnSouth" value="South" onclick="btnSouth_Click();"/>   
+
+	<br>
+
+    <p class="title">Score</p>
+
+    <input type = "text" id = "scoreBox" name = "scoreBox" readonly />
+
+    <br> 
+    <a href="mailto:chesspro18@gmail.com">Email me for any qeustions!</a>
+
+    <script type="text/javascript">
+		var scoreBox = document.getElementById("scoreBox");
+
+		var visitedNorth = false;
+		var visitedSouth = false;
+		var visitedWest = false;
+		var visitedEast = false;			
+		
+		var playerScore = 0;
+
+		function btnNorth_Click() {
+			var message = "Upon entering North, you shall encounter the Mountain Giants";
+			alert(message);
+			if (!visitedNorth) {
+				playerScore += 5;
+				scoreBox.value = playerScore;
+				visitedNorth = true;
+			} 
+		}
+		function btnSouth_Click() {
+			var message = "Upon entering South, you shall encounter the Sand Giants";
+			alert(message);
+			if (!visitedSouth) {
+				playerScore += 5;
+				scoreBox.value = playerScore;
+				visitedSouth = true;
+			}
+		}
+		function btnWest_Click() {
+			var message = "Upon entering West, you shall encounter the Island Giants";
+			alert(message);
+			if (!visitedWest) {
+				playerScore += 5;
+				scoreBox.value = playerScore;
+				visitedWest = true;
+			}
+		}
+		function btnEast_Click() {
+			var message = "Upon entering East, you shall encounter the Sea Giants"
+			alert(message);
+			if (!visitedEast) {
+				playerScore += 5;				
+				scoreBox.value = playerScore;
+				visitedEast = true;
+			}
+		}
+  	</script>       
+</body>
+</html>
